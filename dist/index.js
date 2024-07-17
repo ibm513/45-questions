@@ -309,6 +309,13 @@ for (let i = 0; i < fav_count.length; i++) {
 // Question No 21)They think of something you could store in a TypeScript Object.
 //  Write a program that
 // creates Objects containing these items.
+console.log(" ");
+console.log("Question No 21");
+console.log(" ");
+let new_obj_1 = {};
+new_obj_1.name_of_fruit = "Orange";
+new_obj_1.quantity = 13;
+console.log(new_obj_1);
 // Question No 22)Intentional Error: If you haven’t received an array index error in one
 // of your programs yet, try to make one happen. Change an index in one of your programs to
 // produce an index error. Make sure you correct the error before closing the program.
@@ -896,21 +903,74 @@ function make_shirt_1(size = "Large", text = "I Love Typescript") {
     return `The size of the shirt is ${size} and the message to be printed on the shirt
 is "${text}"`;
 }
-console.log(make_shirt("Medium", "This is a cool T-shirt"));
+console.log(make_shirt_1());
+console.log(make_shirt_1("Large"));
+console.log(make_shirt_1("Medium"));
+console.log(make_shirt_1("Small", "My code is so cool"));
+//38)Cities: Write a function called describe_city() that accepts the name of a 
+// city and its country. The function should print a simple sentence, such as Karachi 
+// is in Pakistan. Give the parameter for the country a default value. Call your 
+// function for three different cities, at least one of which is not in the default 
+// country.
+console.log(" ");
+console.log("Question No 38");
+console.log(" ");
+function describe_city(city, country = "Pakistan") {
+    return `${city} is in ${country}`;
+}
+console.log(describe_city("Lahore"));
+console.log(describe_city("Islamabad"));
+console.log(describe_city("Dehli"));
+// 39)City Names: Write a function called city_country() that takes in the name of 
+// a city and its country. The function should return a string formatted like this:
+// "Lahore, Pakistan"
+// Call your function with at least three city-country pairs, and print the value 
+// that’s returned.
+console.log(" ");
+console.log("Question No 39");
+console.log(" ");
+function city_country(city, country) {
+    return `${city},${country}`;
+}
+console.log(city_country("Paris", "France"));
+console.log(city_country("Mosccow", "Russia"));
+console.log(city_country("Karachi", "Pakistan"));
+// 40)Album: Write a function called make_album() that builds a Object describing 
+// a music album. The function should take in an artist name and an album title, 
+// and it should return a Object containing these two pieces of information. 
+// Use the function to make three dictionaries representing different albums. 
+// Print each return value to show that Objects are storing the album information 
+// correctly. Add an optional parameter to make_album() that allows you to store the 
+// number of tracks on an album. If the calling line includes a value for the number 
+// of tracks, add that value to the album’s Object. Make at least one new function 
+// call that includes the number of tracks on an album.
+console.log(" ");
+console.log("Question No 40");
+console.log(" ");
+function make_album(art_name, alb_title, no_tracks = "not available") {
+    let new_obj = { artistName: art_name,
+        albumTitle: alb_title,
+        No_of_Tracks: no_tracks
+    };
+    return new_obj;
+}
+console.log(make_album("Bob Dylan", "The Freewheelin", 12));
+console.log(make_album("Richie Havens", "Mixed Bag"));
+console.log(make_album("Laura Nyro", "More Than A New Discovery"));
+// 41)Magicians: Make a array of magician’s names. Pass the array to a function 
+// called show_magicians(), which prints the name of each magician in the array.
+console.log(" ");
+console.log("Question No 41");
+console.log(" ");
+let magician_name = ["David Blaine", "David Copperfield", "Doug Henning", "Harry Houdini", "Criss Angel", "Derren Brown"];
+function show_magicians() {
+    for (let i = 0; i < magician_name.length; i++) {
+        console.log(magician_name[i]);
+    }
+}
+console.log(show_magicians());
 export {};
-/*38)Cities: Write a function called describe_city() that accepts the name of a city and its country. The function should print a simple sentence, such as Karachi is in Pakistan. Give the parameter for the country a default value. Call your function for three different cities, at least one of which is not in the default country.
-
-39)City Names: Write a function called city_country() that takes in the name of a city and its country. The function should return a string formatted like this:
-999999999999999999999999999999999999999999999999999999999999999988888888888888888888888888888888888888888888888888888888888888888888888888888
-"Lahore, Pakistan"
-
-Call your function with at least three city-country pairs, and print the value that’s returned.
-
-40)Album: Write a function called make_album() that builds a Object describing a music album. The function should take in an artist name and an album title, and it should return a Object containing these two pieces of information. Use the function to make three dictionaries representing different albums. Print each return value to show that Objects are storing the album information correctly. Add an optional parameter to make_album() that allows you to store the number of tracks on an album. If the calling line includes a value for the number of tracks, add that value to the album’s Object. Make at least one new function call that includes the number of tracks on an album.
-
-41)Magicians: Make a array of magician’s names. Pass the array to a function called show_magicians(), which prints the name of each magician in the array.
-
-42)Great Magicians: Start with a copy of your program from Exercise 39. Write a function called make_great() that modifies the array of magicians by adding the phrase the Great to each magician’s name. Call show_magicians() to see that the list has actually been modified.
+/*42)Great Magicians: Start with a copy of your program from Exercise 39. Write a function called make_great() that modifies the array of magicians by adding the phrase the Great to each magician’s name. Call show_magicians() to see that the list has actually been modified.
 
 43Unchanged Magicians: Start with your work from Exercise 40. Call the function make_great() with a copy of the array of magicians’ names. Because the original array will be unchanged, return the new array and store it in a separate array. Call show_magicians() with each array to show that you have one array of the original names and one array with the Great added to each magician’s name.
 
