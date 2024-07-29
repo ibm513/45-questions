@@ -1,6 +1,6 @@
 // Question 1)Install Node.js, TypeScript and VS Code on your computer.
 
-import { Console } from "console";
+
 
 // node -v
 // tsc -v
@@ -19,9 +19,7 @@ console.log(`Hello ${name_1}, would you like to learn some Python today?`);
 // Question 3)Name Cases: Store a person’s name in a variable, and then
 // print that person’s name in lowercase, uppercase, and titlecase.
 
-// console.log(" ")
-// console.log("Question No 3")
-// console.log(" ")
+
 
 console.log(" ");
 console.log("Question No 3");
