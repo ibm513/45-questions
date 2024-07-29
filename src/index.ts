@@ -468,6 +468,16 @@ console.log(new_obj_1)
 // of your programs yet, try to make one happen. Change an index in one of your programs to
 // produce an index error. Make sure you correct the error before closing the program.
 
+console.log(" ");
+console.log("Question No 22");
+console.log(" ");
+
+let fruits: string[] =  ['orange', 'mango', 'banana','pineapple']
+
+
+// console.log(fruits{1})  ====>  this will give array index error
+console.log(fruits[1])
+
 // Question No 23)Conditional Tests: Write a series of conditional tests.
 // Print a statement describing each test and your prediction for the results of each test.
 // Your code should look something like this:
@@ -1378,11 +1388,92 @@ console.log(" ");
 console.log("Question No 43");
 console.log(" ");
 
+magician_name = ["David Blaine","David Copperfield","Doug Henning","Harry Houdini","Criss Angel","Derren Brown"]
+
+let magician_name_copy = ["David Blaine","David Copperfield","Doug Henning","Harry Houdini","Criss Angel","Derren Brown"]
+
+let unchanged_mag_copy:any = []
+
+function make_great2(){
+  
+
+  for(let i = magician_name_copy.length-1; i>-1;i--){
+    
+    unchanged_mag_copy.push(`The great ${magician_name_copy[i]}`)
+    
+  }
+  return unchanged_mag_copy 
+}
 
 
-/*44)Sandwiches: Write a function that accepts a array of items a person wants on a sandwich. The function should have one parameter that collects as many items as the function call provides, and it should print a summary of the sandwich that is being ordered. Call the function three times, using a different number of arguments each time.
+function show_magicians1(){
+  for(let i = 0; i<magician_name.length;i++){
+    console.log (magician_name[i])
+  }
 
-45)Cars: Write a function that stores information about a car in a Object. The function should always receive a manufacturer and a model name. 
+}
+
+make_great2()
+
+function show_magicians2(){
+  for(let i = 0; i<unchanged_mag_copy.length;i++){
+    console.log (unchanged_mag_copy[i])
+  }
+
+}
+
+
+show_magicians1()
+show_magicians2()
+
+
+// /*44)Sandwiches: Write a function that accepts a array of items a person wants on a sandwich. The function should have one parameter that collects as many items as the function call provides, and it should print a summary of the sandwich that is being ordered. Call the function three times, using a different number of arguments each time.
+
+console.log(" ");
+console.log("Question No 44");
+console.log(" ");
+
+function select_sandwich(...sandwichitems:[]){
+ 
+  return `The ordered sandwich should contain the following items, 
+  ${sandwichitems}`
+}
+
+console.log(select_sandwich(['bread', 'chicken patty','ketchup']))
+console.log(" ");
+console.log(select_sandwich(['bread', 'chicken patty','ketchup','mayo']))
+console.log(" ");
+console.log(select_sandwich(['bread', 'chicken patty','ketchup','mayo','cucumber']))
+
+
+/*45)Cars: Write a function that stores information about a car in a Object. The function should always receive a manufacturer and a model name. 
 It should then accept an arbitrary number of keyword arguments. Call the function with the required information and two other name-value pairs, 
 such as a color or an optional feature. Print the Object that’s returned to make sure all the 
 information was stored correctly.*/
+
+
+console.log(" ");
+console.log("Question No 45");
+console.log(" ");
+
+interface Car {
+  manufacturer: string;
+  modelName: string;
+  [key: string]: any;
+}
+
+function createCar(manufacturer: string, modelName: string, additionalInfo: { [key: string]: any }): Car {
+  const car: Car = {
+    manufacturer: manufacturer,
+    modelName: modelName,
+    ...additionalInfo
+  };
+  return car;
+}
+
+
+const myCar = createCar('Toyota', 'Camry', { color: 'Blue', year: 2020 });
+
+
+console.log(myCar);
+
